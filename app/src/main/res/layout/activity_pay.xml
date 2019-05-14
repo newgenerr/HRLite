@@ -66,9 +66,10 @@
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="RadioButton"
+                    android:text="บันทึกต้นแบบ"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="20dp"
                     android:id="@+id/radioButton"/>
         </LinearLayout>
 
