@@ -14,12 +14,15 @@
         <TextView
                 android:text="HRLite"
                 android:textAlignment="center"
+                android:textSize="70dp"
+                android:textColor="#0055FF"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView"/>
+                android:layout_height="wrap_content" android:id="@+id/Titlelogo"/>
         <TextView
                 android:text="Human Resource Management"
                 android:textAlignment="center"
+                android:textColor="#0055FF"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                android:layout_height="wrap_content" android:id="@+id/desicribtion"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
