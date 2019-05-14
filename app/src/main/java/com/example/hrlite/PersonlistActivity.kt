@@ -1,6 +1,7 @@
 package com.example.hrlite
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -61,4 +62,26 @@ class PersonlistActivity : AppCompatActivity() {
         requestQueue?.cancelAll(TAG)
     }
 
+}
+
+class RecycleAdapter (private val context: Context, private val items : ArrayList<Person>) : RecyclerView.Adapter<ViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_person, parent, false))
+    }
+
+    override fun getItemCount(): Int {
+        return items.size
+    }
+
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        viewHolder.bindView(items[position])
+    }
+
+}
+
+class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+
+    fun bindView(person: Person){
+        itemView.personName.text = person.ps_fname+" "+person.ps_lname
+    }
 }
