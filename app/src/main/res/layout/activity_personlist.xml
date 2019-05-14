@@ -15,6 +15,12 @@
             tools:layout_editor_absoluteX="16dp"
             android:layout_marginTop="15dp"
             android:layout_marginHorizontal="15dp">
+        <TextView
+                android:textAlignment="center"
+                android:text="10 เมษายน 2541"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView"/>
         <Button
                 android:text="ค้นหาวันทำเงินเดือน"
                 android:layout_width="match_parent"
