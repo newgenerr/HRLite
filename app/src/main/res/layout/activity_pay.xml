@@ -58,13 +58,23 @@
 
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:layout_weight="2">
+                      android:orientation="vertical"
+                      android:layout_weight="1">
+            <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
+            <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButton"/>
         </LinearLayout>
 
         <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:layout_weight="10">
+                      android:layout_height="wrap_content"
+                      android:layout_weight="0">
             <Button
                     android:text="บันทึก"
                     android:textColor="#FFFFFF"
