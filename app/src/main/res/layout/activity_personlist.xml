@@ -24,7 +24,7 @@
         <Button
                 android:text="ค้นหาวันทำเงินเดือน"
                 android:layout_width="match_parent"
-                android:background="@drawable/button"
+                android:background="@drawable/button2"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:layout_height="70dp"

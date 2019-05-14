@@ -7,9 +7,81 @@
         android:layout_height="match_parent"
         tools:context=".RevenueActivity">
 
-    <RelativeLayout android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-        
-    </RelativeLayout>
+    <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="20dp">
+
+        <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="0">
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="2">
+
+                <TextView android:layout_width="60dp"
+                          android:layout_height="60dp"
+                          android:text="1"
+                          android:textAlignment="center"
+                          android:textSize="40dp"
+                          android:textColor="#FFFFFF"
+                          android:background="@drawable/circle"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="2">
+
+                <TextView android:layout_width="60dp"
+                          android:layout_height="60dp"
+                          android:text="2"
+                          android:textAlignment="center"
+                          android:textSize="40dp"
+                          android:textColor="#FFFFFF"
+                          android:background="@drawable/circle2"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="">
+
+                <TextView android:layout_width="60dp"
+                          android:layout_height="60dp"
+                          android:text="3"
+                          android:textAlignment="center"
+                          android:textSize="40dp"
+                          android:textColor="#FFFFFF"
+                          android:background="@drawable/circle2"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="2">
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="10">
+            <Button
+                    android:text="ดำเนินการต่อ"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/button"
+                    android:layout_weight="1"
+                    android:textSize="20dp"/>
+            <Button
+                    android:text="ยกเลิก"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/button_gray"
+                    android:layout_weight="1"
+                    android:textSize="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
