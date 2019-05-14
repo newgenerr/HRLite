@@ -10,28 +10,55 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
         <TextView
-                android:text="SignIn"
+                android:text="Sign In"
                 android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textColor="#0055FF"
                 android:layout_height="wrap_content" android:id="@+id/txtSign"/>
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:inputType="textPersonName"
+                android:padding="10dp"
                 android:ems="10"
+                android:textSize="20dp"
                 android:id="@+id/userInput"
-                android:hint="username"/>
+                android:background="@drawable/input_text"
+                android:hint="ซื่อผู้ใช้"/>
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:inputType="textPassword"
+                android:padding="10dp"
+                android:background="@drawable/input_text"
                 android:ems="10"
+                android:textSize="20dp"
                 android:id="@+id/passInput"
-                android:hint="password"/>
-        <Button
-                android:text="Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/signBtn"/>
+                android:hint="รหัสผ่าน"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                <Button
+                        android:text="ดำเนินการต่อ"
+                        android:textColor="#FFFFFF"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#0055FF"
+                        android:id="@+id/signBtn"
+                        android:background="@drawable/button"
+                        android:layout_weight="1"
+                        android:textSize="20dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
