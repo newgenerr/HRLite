@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -26,10 +27,16 @@ class PersonlistActivity : AppCompatActivity() {
 
     val TAG = "HR_SERVICE"
     var requestQueue: RequestQueue? = null
+    var searchBtn: Button? = null
     var PersonList = ArrayList<Person>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personlist)
+        val searchBtn = findViewById<Button>(R.id.searchBtn)
+        searchBtn.setOnClickListener{
+            var intent = Intent(this,SearchDateActivity::class.java)
+            startActivity(intent)
+        }
         val cache = DiskBasedCache(cacheDir, 1024 * 1024)
         val network = BasicNetwork(HurlStack())
         val requestQueue = RequestQueue(cache, network).apply {
@@ -49,7 +56,7 @@ class PersonlistActivity : AppCompatActivity() {
                         json.getJSONObject(it).getString("ps_lname"))
                 }
                 personList.layoutManager = LinearLayoutManager(this)
-                personList.adapter = RecycleAdapter(this, PersonList)
+                personList.adapter = PersonAdapter(this, PersonList)
             },
             Response.ErrorListener { response -> Log.d("test",response.toString()) }
         )
@@ -62,44 +69,4 @@ class PersonlistActivity : AppCompatActivity() {
         requestQueue?.cancelAll(TAG)
     }
 
-}
-
-class RecycleAdapter (private val context: Context, private val items : ArrayList<Person>) : RecyclerView.Adapter<ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var mView = LayoutInflater
-            .from(context)
-            .inflate(R.layout.item_person, parent,false)
-        var mViewHolder = ViewHolder(mView)
-
-        mView.setOnClickListener {
-            val itemList = items
-            var selectItem = itemList[mViewHolder.layoutPosition]
-            Toast.makeText(context,selectItem.sl_id,Toast.LENGTH_SHORT).show()
-            var intent_me =  Intent(context,RevenueActivity::class.java)
-            intent_me.putExtra("title",selectItem.sl_id)
-//            intent_me.putExtra("author",selectItem.title_description)
-//            intent_me.putExtra("imageLink",selectItem.imageUrl)
-//            intent_me.putExtra("year",selectItem.price)
-            context.startActivity(intent_me)
-        }
-
-        return mViewHolder
-    }
-
-    override fun getItemCount(): Int {
-        return items.size
-    }
-
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.bindView(items[position])
-    }
-
-}
-
-class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-
-    fun bindView(person: Person){
-        itemView.personName.text = person.pf_name+""+person.ps_fname+" "+person.ps_lname
-        itemView.slId.text = person.sl_id
-    }
 }

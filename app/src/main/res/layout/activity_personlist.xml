@@ -17,7 +17,7 @@
             android:layout_marginHorizontal="15dp">
         <TextView
                 android:textAlignment="center"
-                android:text="10 เมษายน 2541"
+                android:text="วันที่ 15 พฤษภาคม 2562"
                 android:textSize="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView"/>

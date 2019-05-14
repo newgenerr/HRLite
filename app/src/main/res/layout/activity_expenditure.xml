@@ -10,7 +10,8 @@
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
-                  android:layout_marginHorizontal="20dp">
+                  android:layout_marginHorizontal="20dp" app:layout_constraintTop_toTopOf="parent"
+                  tools:layout_editor_absoluteX="20dp" android:layout_marginTop="16dp">
 
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -56,28 +57,56 @@
         </LinearLayout>
 
         <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:layout_weight="2">
+                      android:layout_height="wrap_content"
+        >
 
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="Name"
                     android:ems="10"
-                    android:id="@+id/editText3" android:layout_weight="1"/>
+                    android:id="@+id/editText3" android:layout_weight="1" android:hint="ประเภทรายจ่าย"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="textPersonName|numberDecimal"
                     android:ems="10"
-                    android:id="@+id/editText4" android:layout_weight="1"/>
+                    android:id="@+id/editText4" android:layout_weight="1" android:hint="จำนวน(บาท)"/>
             <Button
                     android:text="Button"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp" android:id="@+id/button2" android:layout_weight="1"/>
         </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="1">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="ชื่่อรายจ่าย"
+                        android:layout_width="158dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" android:textSize="20dp"/>
+                <TextView
+                        android:text="จำนวน(บาท)"
+                        android:layout_width="193dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3" android:textSize="20dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/income_list"/>
+        </LinearLayout>
+
 
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -89,7 +118,7 @@
                     android:layout_height="60dp"
                     android:background="@drawable/button"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" android:id="@+id/next2"/>
             <Button
                     android:text="ยกเลิก"
                     android:textColor="#FFFFFF"
@@ -97,7 +126,7 @@
                     android:layout_height="60dp"
                     android:background="@drawable/button_gray"
                     android:layout_weight="1"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" android:id="@+id/cancel2"/>
         </LinearLayout>
 
     </LinearLayout>
