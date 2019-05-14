@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -34,24 +35,23 @@ class PersonlistActivity : AppCompatActivity() {
         val requestQueue = RequestQueue(cache, network).apply {
             start()
         }
-        val url = "http://192.168.99.100/get_all_person"
+        val url = "http://10.80.39.17/TSP59/School/index.php/hr/salary/Mobile_service/get_all_person_salary"
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             Response.Listener<String> { response ->
-                // Display the first 500 characters of the response string.
                 val json = JSONArray(response)
                 Log.d("JSON",json.toString())
                 (0 until json.length()).mapTo(PersonList) {
                     Person(json.getJSONObject(it).getString("ps_id"),
+                        json.getJSONObject(it).getString("sl_id"),
                         json.getJSONObject(it).getString("pf_name"),
                         json.getJSONObject(it).getString("ps_fname"),
-                        json.getJSONObject(it).getString("ps_lname"),
-                        json.getJSONObject(it).getString("admin_name"))
+                        json.getJSONObject(it).getString("ps_lname"))
                 }
                 personList.layoutManager = LinearLayoutManager(this)
                 personList.adapter = RecycleAdapter(this, PersonList)
             },
-            Response.ErrorListener { println("Error") }
+            Response.ErrorListener { response -> Log.d("test",response.toString()) }
         )
         stringRequest.tag = TAG
         requestQueue?.add(stringRequest)
@@ -66,7 +66,24 @@ class PersonlistActivity : AppCompatActivity() {
 
 class RecycleAdapter (private val context: Context, private val items : ArrayList<Person>) : RecyclerView.Adapter<ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_person, parent, false))
+        var mView = LayoutInflater
+            .from(context)
+            .inflate(R.layout.item_person, parent,false)
+        var mViewHolder = ViewHolder(mView)
+
+        mView.setOnClickListener {
+            val itemList = items
+            var selectItem = itemList[mViewHolder.layoutPosition]
+            Toast.makeText(context,selectItem.sl_id,Toast.LENGTH_SHORT).show()
+            var intent_me =  Intent(context,RevenueActivity::class.java)
+            intent_me.putExtra("title",selectItem.sl_id)
+//            intent_me.putExtra("author",selectItem.title_description)
+//            intent_me.putExtra("imageLink",selectItem.imageUrl)
+//            intent_me.putExtra("year",selectItem.price)
+            context.startActivity(intent_me)
+        }
+
+        return mViewHolder
     }
 
     override fun getItemCount(): Int {
@@ -82,6 +99,7 @@ class RecycleAdapter (private val context: Context, private val items : ArrayLis
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     fun bindView(person: Person){
-        itemView.personName.text = person.ps_fname+" "+person.ps_lname
+        itemView.personName.text = person.pf_name+""+person.ps_fname+" "+person.ps_lname
+        itemView.slId.text = person.sl_id
     }
 }
