@@ -7,4 +7,89 @@
         android:layout_height="match_parent"
         tools:context=".ReportActivity">
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:padding="10dp"
+                      android:layout_height="wrap_content">
+            <TextView
+                android:textAlignment="center"
+                android:text="10 เมษายน 2541"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView"/>
+
+            <Button
+                    android:text="ค้นหาวันทำเงินเดือน"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/button2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/searchBtn"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:background="@drawable/background"
+                      android:elevation="1dp">
+            <TextView
+                    android:textAlignment="center"
+                    android:text="รายงานการทำเงินเดือน"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:padding="20dp"
+                    android:id="@+id/imageView"/>
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:background="@drawable/background"
+                      android:elevation="1dp"
+                      android:orientation="vertical"
+                  android:layout_height="wrap_content">
+            <TextView
+                    android:textAlignment="center"
+                    android:text="รายงานค่าปรับ"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars[1]"
+                    android:padding="20dp"
+                    android:id="@+id/imageView2"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:background="@drawable/background"
+                      android:elevation="1dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <TextView
+                    android:textAlignment="center"
+                    android:text="รายงานการกระทำผิด"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars[15]"
+                    android:padding="20dp"
+                    android:id="@+id/imageView3"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
