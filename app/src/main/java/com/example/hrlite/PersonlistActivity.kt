@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -55,6 +56,7 @@ class PersonlistActivity : AppCompatActivity() {
                         json.getJSONObject(it).getString("ps_fname"),
                         json.getJSONObject(it).getString("ps_lname"))
                 }
+
                 personList.layoutManager = LinearLayoutManager(this)
                 personList.adapter = PersonAdapter(this, PersonList)
             },

@@ -57,7 +57,7 @@
         </LinearLayout>
 
         <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
+                      android:layout_height="58dp"
                       android:id="@+id/shiw">
 
 
@@ -73,10 +73,14 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:id="@+id/editText2" android:layout_weight="2" android:hint="จำนวน(บาท)"/>
-            <Button
-                    android:text="b"
+            <ImageButton
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/b" android:layout_weight="3"/>
+                    android:layout_height="45dp"
+                    android:id="@+id/b"
+                    android:layout_weight="3"
+                    android:src="@drawable/baseline_add_white_18dp"
+                    android:background="@drawable/button"
+            />
         </LinearLayout>
 
         <LinearLayout

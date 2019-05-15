@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_person.view.*
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.RecyclerView.HORIZONTAL
+
 
 class PersonAdapter (private val context: Context, private val items : ArrayList<Person>) : RecyclerView.Adapter<PersonViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
@@ -20,7 +23,7 @@ class PersonAdapter (private val context: Context, private val items : ArrayList
         mView.setOnClickListener {
             val itemList = items
             var selectItem = itemList[mViewHolder.layoutPosition]
-            Toast.makeText(context,selectItem.sl_id, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context,selectItem.sl_id, Toast.LENGTH_SHORT).show()
             var intent_me =  Intent(context,RevenueActivity::class.java)
             intent_me.putExtra("sl_id",selectItem.sl_id)
 //            intent_me.putExtra("author",selectItem.title_description)
